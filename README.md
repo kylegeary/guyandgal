@@ -1,5 +1,5 @@
 # What is this?
-A travel blog for sopme friends of mine who are spending a year abroad.
+A travel blog for some friends spending a year abroad.
 
 ## Goal
 Build a blog which does the following:
