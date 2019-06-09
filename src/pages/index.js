@@ -6,16 +6,18 @@ import Layout from "../components/layout"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <ul>
+    <ul class="posts">
       {data.allStrapiPost.edges.map(document => (
-        <li key={document.node.id}>
-          <h2>
+        <li class="post" key={document.node.id}>
+          <h2 class="post__title">
             <Link to={`/${document.node.id}`}>
               {document.node.title}
             </Link>
           </h2>
-          <Img fixed={document.node.image.childImageSharp.fixed}/>
-          <p>{document.node.content}</p>
+          <div class="post__preview">
+            <Img class="post__preview-image" fixed={document.node.image.childImageSharp.fixed}/>
+            <p class="post__preview-content">{document.node.content}</p>
+          </div>
         </li>
       ))}
     </ul>
