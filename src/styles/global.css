@@ -18,7 +18,6 @@
 
 }
 
-
 .header {
 	background-color: #5a4522;
 	margin-bottom: 1.45rem;
@@ -40,11 +39,14 @@
 }
 
 .posts {
-
+	list-style: none;
 }
+
 .post {
-
+	display: flex;
 }
+
+
 
 .post__title {
 
@@ -54,12 +56,8 @@
 	display: flex;
 }
 
-.post__preview-image {
-	min-width: 100%;
-}
 
-.post__preview-content {
-	max-width: 75%;
+.post__preview-text {
 	padding-left: 1rem;
 }
 

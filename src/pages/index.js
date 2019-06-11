@@ -9,16 +9,16 @@ const IndexPage = ({ data }) => (
     <ul class="posts">
       {data.allStrapiPost.edges.map(document => (
         <li class="post" key={document.node.id}>
-          <div class="post__preview">
-              <Img class="post__preview-image" fixed={document.node.image.childImageSharp.fixed}/>
-              <div class="post__preview-text">
-                <h3 class="post__title">
-                  <Link to={`/${document.node.id}`}>
-                    {document.node.title}
-                  </Link>
-                </h3>
-                <p class="post__preview-content">{document.node.postpreview}</p>
-              </div>
+          <div class="post__preview-image">
+            <Img class="post__preview-image" fixed={document.node.image.childImageSharp.fixed}/>
+          </div>
+            <div class="post__preview-text">
+              <h3 class="post__title">
+                <Link to={`/${document.node.id}`}>
+                  {document.node.title}
+                </Link>
+              </h3>
+              <p class="post__preview-content">{document.node.postpreview}</p>
             </div>
         </li>
       ))}
@@ -36,7 +36,7 @@ export const pageQuery = graphql`
           id
           image {
             childImageSharp {
-              fixed(width: 200, height: 125) {
+              fixed(width: 200, height: 200) {
                 ...GatsbyImageSharpFixed
               }
             }
