@@ -1,3 +1,81 @@
+:root {
+	--color-blue-30: #002159;
+	--color-blue-35: #01337d;
+	--color-blue-40: #03449e;
+	--color-blue-45: #0552b5;
+	--color-blue-50: #0967D2;
+	--color-blue-55: #2186eb;
+	--color-blue-60: #47a3f3;
+	--color-blue-65: #7cc4fa;
+	--color-blue-70: #bae3ff;
+	--color-blue-75: #e6f6ff;
+
+	--color-gray-25: #222222;
+	--color-grey-30: #1f2933;
+	--color-grey-35: #323f4b;
+	--color-grey-40: #3e4c59;
+	--color-grey-45: #52606d;
+	--color-grey-50: #616e7c;
+	--color-grey-55: #7b8794;
+	--color-grey-60: #9aa5b1;
+	--color-grey-65: #cbd2d9;
+	--color-grey-70: #e4e7eb;
+	--color-grey-75: #f5f7fa;
+
+	--color-cyan-30:#05606e;
+	--color-cyan-35:#07818f;
+	--color-cyan-40:#099aa4;
+	--color-cyan-45:#0fb5ba;
+	--color-cyan-50:#1cd4d4;
+	--color-cyan-55:#3ae7e1;
+	--color-cyan-60:#62f4eb;
+	--color-cyan-65:#92fdf2;
+	--color-cyan-70:#c1fef6;
+	--color-cyan-75:#e1fcf8;
+
+	--color-orange-30:#841003;
+	--color-orange-35:#ad1d07;
+	--color-orange-40:#c52707;
+	--color-orange-45:#de3a11;
+	--color-orange-50:#f35627;
+	--color-orange-55:#f9703e;
+	--color-orange-60:#ff9466;
+	--color-orange-65:#ffb088;
+	--color-orange-70:#ffd0b5;
+	--color-orange-75:#ffe8d9;
+
+	--color-red-30:#610316;
+	--color-red-35:#8a041a;
+	--color-red-40:#ab091e;
+	--color-red-45:#cf1124;
+	--color-red-50:#e12d39;
+	--color-red-55:#ef4e4e;
+	--color-red-60:#f86a6a;
+	--color-red-65:#ff9b9b;
+	--color-red-70:#ffbdbd;
+	--color-red-75:#ffe3e3;
+
+	--color-yellow-30:#8d2b0b;
+	--color-yellow-35:#b44d12;
+	--color-yellow-40:#cb6e17;
+	--color-yellow-45:#de911d;
+	--color-yellow-50:#f0b429;
+	--color-yellow-55:#f7c948;
+	--color-yellow-60:#fadb5f;
+	--color-yellow-65:#fce588;
+	--color-yellow-70:#fff3c4;
+	--color-yellow-75:#fffbea;
+
+	--color-white: #ffffff;
+
+
+
+
+	--font-family-primary: 'Open Sans', sans-serif;
+	--font-family-secondary: 'Josefin Sans', sans-serif;
+}
+
+
 .author-heading {
 	font-size: 2.5rem;
 }
@@ -42,26 +120,21 @@
 	list-style: none;
 }
 
-.post {
+.post-preview {
 	display: flex;
 }
 
-.post__link {
+.post-preview__link {
 	text-decoration: none;
 }
 
-
-.post__title {
-	margin-bottom: 0.75rem;
-}
-
-.post__preview {
-	display: flex;
-}
-
-
-.post__preview-text {
+.post-preview__text {
 	padding-left: 1rem;
+}
+
+
+.post-preview__title {
+	margin-bottom: 0.75rem;
 }
 
 .site-main {}

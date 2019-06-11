@@ -8,17 +8,17 @@ const IndexPage = ({ data }) => (
   <Layout>
     <ul class="posts">
       {data.allStrapiPost.edges.map(document => (
-        <li class="post" key={document.node.id}>
-          <div class="post__preview-image">
-            <Img class="post__preview-image" fixed={document.node.image.childImageSharp.fixed}/>
+        <li class="post-preview" key={document.node.id}>
+          <div class="post-preview__image">
+            <Img fixed={document.node.image.childImageSharp.fixed}/>
           </div>
-            <div class="post__preview-text">
-              <h3 class="post__title">
-                <Link class="post__link" to={`/${document.node.id}`}>
+            <div class="post-preview__text">
+              <h3 class="post-preview__title">
+                <Link class="post-preview__link" to={`/${document.node.id}`}>
                   {document.node.title}
                 </Link>
               </h3>
-              <p class="post__preview-content">{document.node.postpreview}</p>
+              <p class="post__preview-content">{document.node.content}</p>
             </div>
         </li>
       ))}
