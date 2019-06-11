@@ -25,15 +25,10 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div class="header__content">
-          <main class="site-main">{children}</main>
-          <footer class="site-footer">
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a> & <a href="https://strapi.io">Strapi</a>
-          </footer>
-        </div>
+        <Header class="header" siteTitle={data.site.siteMetadata.title} />
+        <main class="site-main">{children}</main>
+        <footer class="site-footer">
+        </footer>
       </>
     )}
   />

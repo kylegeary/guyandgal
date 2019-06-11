@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Guy And Gal Travel`,
+    title: `Guy & Gal Travel`,
     description: `We're newlyweds embarking on the ultimate around-the-world adventure: 365 days, 6 continents, 2 backpacks and countless memories to be made.`,
     author: `@gatsbyjs & @strapi`,
   },

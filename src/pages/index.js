@@ -1,12 +1,12 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
-
 import Layout from "../components/layout"
 
 const IndexPage = ({ data }) => (
   <Layout>
     <ul class="posts">
+      <h2 class="posts__header">Latest Posts</h2>
       {data.allStrapiPost.edges.map(document => (
         <li class="post-preview" key={document.node.id}>
           <div class="post-preview__image">
