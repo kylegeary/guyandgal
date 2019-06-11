@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => (
           </div>
             <div class="post__preview-text">
               <h3 class="post__title">
-                <Link to={`/${document.node.id}`}>
+                <Link class="post__link" to={`/${document.node.id}`}>
                   {document.node.title}
                 </Link>
               </h3>
