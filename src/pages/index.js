@@ -2,27 +2,34 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
+import Truncate from "react-truncate"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <ul className="posts">
-      <h2 className="posts__header">Latest Posts</h2>
-      {data.allStrapiPost.edges.map(document => (
-        <li className="post-preview" key={document.node.id}>
-          <div className="post-preview__image">
-            <Img fixed={document.node.image.childImageSharp.fixed}/>
-          </div>
-            <div className="post-preview__text">
-              <h3 className="post-preview__title">
-                <Link className="post-preview__link" to={`/${document.node.id}`}>
-                  {document.node.title}
-                </Link>
-              </h3>
-              <p className="post__preview-content">{document.node.postpreview}</p>
-            </div>
-        </li>
-      ))}
-    </ul>
+  <section className="posts">
+    <h2 className="posts__header">Latest Posts</h2>
+      <ul className="cards">
+        {data.allStrapiPost.edges.map(document => (
+          <li className="card" key={document.node.id}>
+            <Img className="card__image" fluid={document.node.image.childImageSharp.fixed}/>
+              <div className="card__text">
+                <span className="card__category">Post</span>
+                <h3 className="card__title">
+                  <Link className="post-preview__link" to={`/${document.node.id}`}>
+                    {document.node.title}
+                  </Link>
+                </h3>
+              <p className="card__content">
+                <Truncate lines={3} ellipsis={<><span>...</span></>}>
+                  {document.node.postpreview}
+                </Truncate>
+              </p>
+              <Link className="card__cta" to={`/${document.node.id}`}>Read More</Link>
+              </div>
+          </li>
+        ))}
+      </ul>
+    </section>
   </Layout>
 )
 
