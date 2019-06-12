@@ -2,13 +2,20 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
+import ReactMarkdown from "react-markdown"
 
 const PostTemplate = ({ data }) => (
 	<Layout>
-		<h1>{data.strapiPost.title}</h1>
-		<p>by <Link to={`/authors/User_${data.strapiPost.author.id}`}>{data.strapiPost.author.username}</Link></p>
-		<Img fluid={data.strapiPost.image.childImageSharp.fluid} />
-		<p>{data.strapiPost.content}</p>
+    <div className="post">
+      <Img fluid={data.strapiPost.image.childImageSharp.fluid} />
+      <div className="post__text">
+        <h1 className="post__title">{data.strapiPost.title}</h1>
+        <p className="post__author">by <Link to={`/authors/User_${data.strapiPost.author.id}`}>{data.strapiPost.author.username}</Link></p>
+        <ReactMarkdown className="post__content"
+          source={data.strapiPost.content}
+        />
+      </div>
+    </div>
 	</Layout>
 )
 
@@ -21,7 +28,7 @@ export const query = graphql`
       content
       image {
           childImageSharp {
-            fluid(maxWidth: 500) {
+            fluid(maxWidth: 1200) {
               ...GatsbyImageSharpFluid
             }
           }

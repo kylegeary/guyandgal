@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
+import ReactMarkdown from "react-markdown"
 
 const UserTemplate = ({ data }) => (
 	<Layout>
@@ -11,7 +12,9 @@ const UserTemplate = ({ data }) => (
 					<h2 class="author__post-title">
 						<Link to={`/Post_${post.id}`}>{post.title}</Link>
 					</h2>
-					<p class="author__post-content">{post.content}</p>
+					<ReactMarkdown className="author__post-content"
+						source={post.content}
+					/>
 				</li>
 			))}
 		</ul>

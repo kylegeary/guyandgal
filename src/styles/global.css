@@ -75,6 +75,13 @@
 	--font-family-secondary: 'Josefin Sans', sans-serif;
 }
 
+body {
+	background-color: var(--color-grey-75);
+	height: 100%;
+	min-height: 100vh;
+}
+
+
 
 .author-heading {
 	font-size: 2.5rem;
@@ -96,13 +103,19 @@
 
 }
 
+
+.posts__header {
+	padding: 0 0 1rem;
+	margin: 0 auto;
+}
+
 .header {
 	background-color: var(--color-white);
 }
 
 .header__content {
 	margin: 0 auto;
-	max-width: 960px;
+	max-width: 60rem;
 	padding: 1.45rem 1.0875rem;
 	text-align: center;
 }
@@ -115,28 +128,75 @@
 	font-family: var(--font-family-secondary);
 	color: var(--color-grey-30);
 	text-decoration: none;
+	font-size: 1.5em;
 }
 
 .posts {
 	list-style: none;
-text-align: left;
+	text-align: left;
+	max-width: 75rem;
+    margin: 0 auto;
 }
 
-.posts__header {
-	padding: 0 15rem 1rem;
-	margin: 0 auto;
+.post {
+	max-width: 75rem;
+    margin: 0 auto;
+    background-color: var(--color-white);
+    padding-bottom: 3rem;
+}
+
+.post__author {
+	margin-bottom: 0.5rem;
+    border-bottom: thin solid var(--color-cyan-50);
+    padding-bottom: 1rem;
+}
+
+.post__author a {
+	text-decoration: none;
+    color: var(--color-cyan-30);
+}
+
+.post__content {
+	padding-top: 1rem;
+    line-height: 1.6;
+    font-size: 1.125rem;
+    display: block;
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+.post__text {
+	max-width: 50rem;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+.post__title {
+	padding-bottom: 1rem;
+    font-size: 3.5em;
+    margin-bottom: 0;
 }
 
 .post-preview {
 	display: flex;
 	color: var(--color-grey-30);
-	padding: 0 15rem 3rem;
 	margin-left: auto;
 	margin-right: auto;
+	padding: 0 0 3rem;
+
 }
 
 .post-preview:first-child {
 	padding-top: 1rem;
+}
+
+
+.post__preview-content {
+	max-height: 9rem;
+}
+
+.post__preview-content img {
+  display: none;
 }
 
 .post-preview__link {
@@ -155,8 +215,17 @@ text-align: left;
 
 .site-main {
 	font-family: var(--font-family-primary);
-	background-color: var(--color-grey-75);
 	padding: 2rem;
 }
 
 .site-footer {}
+
+@media screen and (min-width: 85em) {
+	.posts__header {
+		padding: 0 10rem 1rem;
+	}
+
+	.post-preview {
+		padding: 0 10rem 3rem;
+	}
+}
