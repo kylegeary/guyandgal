@@ -251,7 +251,7 @@ body {
 .post__text {
 	max-width: 50rem;
     margin: 0 auto;
-    padding-top: 2rem;
+    padding: 2rem;
 }
 
 .post__title {

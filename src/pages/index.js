@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
-import Instagram from "../components/instagram"
 import Layout from "../components/layout"
 import Truncate from "react-truncate"
 
