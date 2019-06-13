@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
+import Instagram from "../components/instagram"
 import Layout from "../components/layout"
 import Truncate from "react-truncate"
 
@@ -13,7 +14,7 @@ const IndexPage = ({ data }) => (
           <li className="card" key={document.node.id}>
             <Img className="card__image" fluid={document.node.image.childImageSharp.fixed}/>
               <div className="card__text">
-                <span className="card__category">Post</span>
+              <span className="card__category">{document.node.category}</span>
                 <h3 className="card__title">
                   <Link className="post-preview__link" to={`/${document.node.id}`}>
                     {document.node.title}
@@ -50,6 +51,7 @@ export const pageQuery = graphql`
           }
           title
           content
+          category
           postpreview
         }
       }

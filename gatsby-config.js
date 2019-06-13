@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Guy & Gal Travel`,
     description: `We're newlyweds embarking on the ultimate around-the-world adventure: 365 days, 6 continents, 2 backpacks and countless memories to be made.`,
-    author: `@gatsbyjs & @strapi`,
+    author: `Kyle Geary`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -26,6 +26,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `guyandgaltravel`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
