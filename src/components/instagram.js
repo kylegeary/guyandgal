@@ -1,22 +1,61 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import Image from "gatsby-image"
+import { css } from "@emotion/core"
+import useInstagram from "../hooks/use-instagram"
 
-export default () => (
-	<StaticQuery
-		query={graphql `
-			query allInstaNode {
-				allInstaNode {
-					nodes {
-						original
-					}
-				}
-			}
-		`}
-		render={data => (
-			<section className="instagram">
-				<Img className="instagram__post" fluid={data.allInstaNode.nodes.original}/>
-			</section>
-		)}
-	/>
-);
+const Insta = () => {
+  const instaPhotos = useInstagram()
+  const { username } = instaPhotos[0]
+
+  return (
+    <>
+      <h2 className="instagram__title">Follow us on Instagram</h2>
+      <div
+        css={css`
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          margin: 1rem -0.5rem;
+        `}
+      >
+        {instaPhotos.map(photo => (
+          <a
+            key={photo.id}
+            href={`https://instagram.com/p/${photo.id}`}
+            css={css`
+              box-shadow: 0;
+              display: block;
+              margin: 0.5rem;
+              max-width: calc(33% - 1rem);
+              width: 200px;
+              transition: 200ms box-shadow linear;
+
+              :focus,
+              :hover {
+                box-shadow: 0 2px 14px #22222244;
+                z-index: 10;
+              }
+            `}
+          >
+            <Image
+              fluid={photo.fluid}
+              alt={photo.caption}
+              css={css`
+                width: 100%;
+
+                * {
+                  margin-top: 0;
+                }
+              `}
+            />
+          </a>
+        ))}
+      </div>
+      <a className="arrow-link" href={`https://instagram.com/${username}`}>
+        See more &rarr;
+      </a>
+    </>
+  )
+}
+
+export default Insta
